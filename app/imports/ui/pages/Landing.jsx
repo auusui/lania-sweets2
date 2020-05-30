@@ -1,5 +1,7 @@
 import React from 'react';
 import { Grid, Header, Image } from 'semantic-ui-react';
+import Insta from '/doc/instagram.JPG';
+import Logo from '/doc/logo.png';
 
 /** A simple static component to render some text for the landing page. */
 class Landing extends React.Component {
@@ -7,10 +9,10 @@ class Landing extends React.Component {
     return (
         <Grid verticalAlign='middle' textAlign='center' container className="middle-contents">
           <Header as='h1' className='header-name'>WELCOME!</Header>
-          <Image size='medium' centered src='./doc/logo.png'/>
-          <Grid.Row container columns={2}>
+          <Image size='medium' centered src={Logo}/>
+          <Grid.Row columns={2}>
             <Grid.Column>
-              <Image size='medium' verticalAlign src='./doc/instagram.JPG'/>
+              <Image size='medium' src={Insta}/>
             </Grid.Column>
             <Grid.Column>
               <Header as='h2'>Find us on Instagram! <br/>
