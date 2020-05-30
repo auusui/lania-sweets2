@@ -5,9 +5,9 @@
   ],
 
   "defaultData": [
-    { "name": "Basket", "quantity": 3, "owner": "john@foo.com", "condition": "excellent" },
-    { "name": "Bicycle", "quantity": 2, "owner": "john@foo.com", "condition": "poor" },
-    { "name": "Banana", "quantity": 2, "owner": "admin@foo.com", "condition": "good" },
-    { "name": "Boogie Board", "quantity": 2, "owner": "admin@foo.com", "condition": "excellent" }
+    { "name": "Aubrie", "info":  "aubrie.nalani", "date": "06/01/2020 4:30 PM", "item": "Scones", "quantity": 3, "description":  "I want it to be a banana scone and gluten-free", "allergies": "none", "method":  "delivered", "owner": "john@foo.com" },
+    { "name": "Melissa", "info":  "mel@email.com", "date": "06/02/2020 2:30 PM", "item": "Cake", "quantity": 2, "description":  "I want it to be a chocolate cake and gluten-free, while also vegan as well", "allergies": "banana", "method":  "pick-up", "owner": "john@foo.com" },
+    { "name": "Gordon", "info":  "melrose.candy", "date": "06/03/2020 8:30 AM", "item": "Banana Bread", "quantity": 1, "description":  "Can you substitute the butter with an alternative organic natural fat", "allergies": "none", "method":  "delivered", "owner": "admin@foo.com" },
+    { "name": "Lahela", "info":  "melanie.rose", "date": "06/04/2020 5:30 AM", "item": "Cookies", "quantity": 12, "description":  "I want it to be crispy, and thin.  I want chocolate chip cookies. ", "allergies": "nuts", "method":  "pick-up", "owner": "admin@foo.com" }
   ]
 }
