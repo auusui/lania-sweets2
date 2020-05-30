@@ -8,16 +8,70 @@ import { Roles } from 'meteor/alanning:roles';
 
 /** The NavBar appears at the top of every page. Rendered by the App Layout component. */
 class NavBar extends React.Component {
+  state = { activeItem: 'home' };
+
+  handleItemClick = (e, { name }) => this.setState({ activeItem: name });
+
   render() {
+    const { activeItem } = this.state;
+
     const menuStyle = { marginBottom: '10px' };
     return (
       <Menu style={menuStyle} attached="top" borderless inverted>
         <Menu.Item as={NavLink} activeClassName="" exact to="/">
-          <Header inverted as='h1'>meteor-application-template</Header>
+          <Header inverted as='h1'>Lānia Sweets</Header>
         </Menu.Item>
         {this.props.currentUser ? (
-            [<Menu.Item as={NavLink} activeClassName="active" exact to="/add" key='add'>Add Stuff</Menu.Item>,
-              <Menu.Item as={NavLink} activeClassName="active" exact to="/list" key='list'>List Stuff</Menu.Item>]
+            [<Menu.Item as={NavLink} activeClassName="active" exact to="/sweet" key='sweet'>
+              <Dropdown item name='Sweet Treats'
+                        active={activeItem === 'sweet treats'}
+                        onClick={this.handleItemClick}>
+                <Dropdown.Menu>
+                  <Dropdown.Item text="Cookies" as={NavLink} exact to="/cookies"/>
+                  <Dropdown.Item text="Cakes" as={NavLink} exact to="/cakes"/>
+                  <Dropdown.Item text="Chocolates" as={NavLink} exact to="/choco"/>
+                  <Dropdown.Item text="Scones" as={NavLink} exact to="/scones"/>
+                  <Dropdown.Item text="Muffins/Cupcakes" as={NavLink} exact to="/muffin"/>
+                </Dropdown.Menu>
+              </Dropdown>
+            </Menu.Item>,
+                <Menu.Item as={NavLink} activeClassName="active" exact to="/special" key='special'>
+                  <Dropdown name='Special Treats'
+                            active={activeItem === 'Special treats'}
+                            onClick={this.handleItemClick}>
+                    <Dropdown.Menu>
+                      <Dropdown.Item text="Gluten-Free" as={NavLink} exact to="/gf"/>
+                      <Dropdown.Item text="Vegan" as={NavLink} exact to="/vegan"/>
+                      <Dropdown.Item text="Refined Sugar-Free" as={NavLink} exact to="/rsf"/>
+                      <Dropdown.Item text="Athletes" as={NavLink} exact to="/athlete"/>
+                      <Dropdown.Item text="Examples" as={NavLink} exact to="/ex"/>
+                      <Dropdown.Item text="Make Your Own" as={NavLink} exact to="/myo"/>
+                    </Dropdown.Menu>
+                  </Dropdown>
+                </Menu.Item>,
+              <Menu.Item as={NavLink} activeClassName="active" exact to="/doughs" key='doughs'>
+                <Dropdown name='Doughs'
+                          active={activeItem === 'doughs'}
+                          onClick={this.handleItemClick}>
+                  <Dropdown.Menu>
+                  <Dropdown.Item text="Pies" as={NavLink} exact to="/pies"/>
+                  <Dropdown.Item text="Bagels" as={NavLink} exact to="/bagels"/>
+                  <Dropdown.Item text="Breads" as={NavLink} exact to="/scones"/>
+                  </Dropdown.Menu>
+                </Dropdown>
+              </Menu.Item>,
+              <Menu.Item name='Promotions'
+                         active={activeItem === 'promotions'}
+                         onClick={this.handleItemClick}
+                         as={NavLink} activeClassName="active" exact to="/promo" key='promo'/>,
+              <Menu.Item name='My Story'
+                         active={activeItem === 'my story'}
+                         onClick={this.handleItemClick}
+                         as={NavLink} activeClassName="active" exact to="/story" key='story'/>,
+              <Menu.Item name='Contact Us'
+                         active={activeItem === 'contact us'}
+                         onClick={this.handleItemClick}
+                         as={NavLink} activeClassName="active" exact to="/contact" key='contact'/>]
         ) : ''}
         {Roles.userIsInRole(Meteor.userId(), 'admin') ? (
             <Menu.Item as={NavLink} activeClassName="active" exact to="/admin" key='admin'>Admin</Menu.Item>
