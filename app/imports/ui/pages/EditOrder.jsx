@@ -1,7 +1,16 @@
 import React from 'react';
 import { Grid, Loader, Header, Segment } from 'semantic-ui-react';
 import swal from 'sweetalert';
-import { AutoForm, ErrorsField, HiddenField, NumField, SelectField, SubmitField, TextField } from 'uniforms-semantic';
+import {
+  AutoForm,
+  DateField,
+  ErrorsField,
+  HiddenField,
+  NumField,
+  SelectField,
+  SubmitField,
+  TextField
+} from 'uniforms-semantic';
 import { Meteor } from 'meteor/meteor';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
@@ -9,12 +18,12 @@ import 'uniforms-bridge-simple-schema-2'; // required for Uniforms
 import { Stuffs, StuffSchema } from '../../api/stuff/Stuff';
 
 /** Renders the Page for editing a single document. */
-class EditStuff extends React.Component {
+class EditOrder extends React.Component {
 
   /** On successful submit, insert the data. */
   submit(data) {
-    const { name, quantity, condition, _id } = data;
-    Stuffs.update(_id, { $set: { name, quantity, condition } }, (error) => (error ?
+    const { name, info, date, item, quantity, description, allergies, method } = data;
+    Stuffs.update(_id, { $set: { name, info, date, item, quantity, description, allergies, method } }, (error) => (error ?
       swal('Error', error.message, 'error') :
       swal('Success', 'Item updated successfully', 'success')));
   }
@@ -33,8 +42,13 @@ class EditStuff extends React.Component {
             <AutoForm schema={StuffSchema} onSubmit={data => this.submit(data)} model={this.props.doc}>
               <Segment>
                 <TextField name='name'/>
+                <TextField name='Contact Info'/>
+                <DateField name='Date and Time You Want the Order Ready By'/>
+                <TextField name='Bakery Item Name'/>
                 <NumField name='quantity' decimal={false}/>
-                <SelectField name='condition'/>
+                <LongTextField name='Instructions/Substitutions'/>
+                <TextField name='Allergies'/>
+                <SelectField name='Order Method'/>
                 <SubmitField value='Submit'/>
                 <ErrorsField/>
                 <HiddenField name='owner' />
@@ -47,7 +61,7 @@ class EditStuff extends React.Component {
 }
 
 /** Require the presence of a Stuff document in the props object. Uniforms adds 'model' to the props, which we use. */
-EditStuff.propTypes = {
+EditOrder.propTypes = {
   doc: PropTypes.object,
   model: PropTypes.object,
   ready: PropTypes.bool.isRequired,
@@ -63,4 +77,4 @@ export default withTracker(({ match }) => {
     doc: Stuffs.findOne(documentId),
     ready: subscription.ready(),
   };
-})(EditStuff);
+})(EditOrder);

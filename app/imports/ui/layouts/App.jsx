@@ -7,10 +7,9 @@ import { HashRouter as Router, Route, Switch, Redirect } from 'react-router-dom'
 import NavBar from '../components/NavBar';
 import Footer from '../components/Footer';
 import Landing from '../pages/Landing';
-import ListStuff from '../pages/ListStuff';
-import ListStuffAdmin from '../pages/ListStuffAdmin';
-import AddStuff from '../pages/AddStuff';
-import EditStuff from '../pages/EditStuff';
+import OrderAdmin from '../pages/OrderAdmin';
+import MYO from '../pages/MYO';
+import EditOrder from '../pages/EditOrder';
 import NotFound from '../pages/NotFound';
 import Signin from '../pages/Signin';
 import Signup from '../pages/Signup';
@@ -27,10 +26,15 @@ class App extends React.Component {
               <Route exact path="/" component={Landing}/>
               <Route path="/signin" component={Signin}/>
               <Route path="/signup" component={Signup}/>
-              <ProtectedRoute path="/list" component={ListStuff}/>
-              <ProtectedRoute path="/add" component={AddStuff}/>
-              <ProtectedRoute path="/edit/:_id" component={EditStuff}/>
-              <AdminProtectedRoute path="/admin" component={ListStuffAdmin}/>
+              <Route exact path="/sweets" component={SweetTreats}/>
+              <Route exact path="/special" component={SpecialTreats}/>
+              <Route exact path="/doughs" component={Doughs}/>
+              <Route exact path="/contact" component={ContactUs}/>
+              <Route exact path="/story" component={MyStory}/>
+              <Route exact path="/promo" component={Promotions}/>
+              <ProtectedRoute path="/myo" component={MYO}/>
+              <ProtectedRoute path="/edit/:_id" component={EditOrder}/>
+              <AdminProtectedRoute path="/orders" component={OrderAdmin}/>
               <ProtectedRoute path="/signout" component={Signout}/>
               <Route component={NotFound}/>
             </Switch>

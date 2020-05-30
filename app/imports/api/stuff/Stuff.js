@@ -8,13 +8,17 @@ const Stuffs = new Mongo.Collection('Stuffs');
 /** Define a schema to specify the structure of each document in the collection. */
 const StuffSchema = new SimpleSchema({
   name: String,
+  info: String,
+  date: Number,
+  item: String,
   quantity: Number,
-  owner: String,
-  condition: {
+  description: String,
+  allergies: String,
+  method: {
     type: String,
-    allowedValues: ['excellent', 'good', 'fair', 'poor'],
-    defaultValue: 'good',
+    allowedValues: ['delivered', 'pick-up'],
   },
+  owner: String,
 }, { tracker: Tracker });
 
 /** Attach this schema to the collection. */

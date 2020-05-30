@@ -17,7 +17,7 @@ class NavBar extends React.Component {
 
     const menuStyle = { marginBottom: '10px' };
     return (
-      <Menu style={menuStyle} attached="top" borderless inverted className='topmenu'>
+      <Menu style={menuStyle} attached="top" borderless inverted className='middlemenu'>
         <Menu.Item as={NavLink} activeClassName="" exact to="/">
           <Header className="header-name" as='h1'>Lānia Sweets</Header>
         </Menu.Item>
@@ -60,6 +60,10 @@ class NavBar extends React.Component {
                   </Dropdown.Menu>
                 </Dropdown>
               </Menu.Item>,
+              <Menu.Item name='Make Your Own Order'
+                         active={activeItem === 'make your own order'}
+                         onClick={this.handleItemClick}
+                         as={NavLink} activeClassName="active" exact to="/myo" key='myo'/>
               <Menu.Item name='Promotions'
                          active={activeItem === 'promotions'}
                          onClick={this.handleItemClick}
@@ -74,7 +78,7 @@ class NavBar extends React.Component {
                          as={NavLink} activeClassName="active" exact to="/contact" key='contact'/>]
         ) : ''}
         {Roles.userIsInRole(Meteor.userId(), 'admin') ? (
-            <Menu.Item as={NavLink} activeClassName="active" exact to="/admin" key='admin'>Admin</Menu.Item>
+            <Menu.Item as={NavLink} activeClassName="active" exact to="/orders" key='orders'>Orders</Menu.Item>
         ) : ''}
         <Menu.Item position="right">
           {this.props.currentUser === '' ? (

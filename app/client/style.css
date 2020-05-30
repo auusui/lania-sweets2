@@ -20,7 +20,19 @@
   margin-left: 0px;
 }
 
+body {
+  background-color: #d2d1a0;
+  font-family: 'Montserrat', sans-serif;
+  color: #3B3D30;
+}
 
+
+.middle-contents {
+  font-family: 'Ranchers', sans-serif;
+  background-color: #d2d1a0;
+  text-align: center;
+  padding-bottom: 20px;
+}
 
 .ui.borderless.middlemenu.menu {
   font-family: 'Montserrat', sans-serif;
@@ -30,9 +42,4 @@
   background-color: #3B3D30;
 }
 
-.middle-contents {
-  font-family: 'Ranchers', sans-serif;
-  background-color: #d2d1a0;
-  text-align: center;
-  padding-bottom: 20px;
-}
+
