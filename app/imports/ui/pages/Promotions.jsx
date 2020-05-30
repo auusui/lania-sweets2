@@ -11,5 +11,4 @@ class Promotions extends React.Component {
     );
   }
 }
-
 export default Promotions;
