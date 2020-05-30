@@ -7,6 +7,21 @@
   padding-left: 0px;
 }
 
+.footer-background {
+  font-family: 'Montserrat', sans-serif;
+  background-color: #3B3D30;
+  color: lightpink;
+}
+
+.header-name {
+  font-family: 'Ranchers', sans-serif;
+  color: #3B3D30;
+  padding-left: 2px;
+  margin-left: 0px;
+}
+
+
+
 .ui.borderless.middlemenu.menu {
   font-family: 'Montserrat', sans-serif;
   padding-left: 20px;
@@ -15,22 +30,9 @@
   background-color: #3B3D30;
 }
 
-.footer-background {
-  font-family: 'Montserrat', sans-serif;
-  background-color: #3B3D30;
-  color: lightpink;
-}
-
 .middle-contents {
   font-family: 'Ranchers', sans-serif;
   background-color: #d2d1a0;
   text-align: center;
   padding-bottom: 20px;
-}
-
-.header-name {
-  font-family: 'Ranchers', sans-serif;
-  color: #3B3D30;
-  padding-left: 2px;
-  margin-left: 0px;
 }
