@@ -5,7 +5,7 @@ import { Header } from 'semantic-ui-react';
 class ContactUs extends React.Component {
   render() {
     return (
-        <Header className="page-headers" as='h1'>Here you will find ContactUs the owner gives periodically.</Header>,
+        <Header className="page-headers" as='h1'>CONTACT US</Header>,
             // eslint-disable-next-line max-len
             <Header className="page-headers" as='h3'>Unfortunately, there are no ContactUs right now.  Keep checking our instagram for updates! (@lania.sweets)</Header>
     );
