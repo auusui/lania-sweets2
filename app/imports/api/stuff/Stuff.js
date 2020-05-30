@@ -9,7 +9,7 @@ const Stuffs = new Mongo.Collection('Stuffs');
 const StuffSchema = new SimpleSchema({
   name: String,
   info: String,
-  date: Number,
+  date: Date,
   item: String,
   quantity: Number,
   description: String,
