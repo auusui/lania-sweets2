@@ -34,6 +34,10 @@ body {
   padding-bottom: 20px;
 }
 
+.page-headers {
+  font-family: 'Montserrat', sans-serif;
+  color: #3B3D30;
+}
 .ui.borderless.middlemenu.menu {
   font-family: 'Montserrat', sans-serif;
   padding-left: 20px;
@@ -41,5 +45,7 @@ body {
   border: black;
   background-color: #3B3D30;
 }
+
+
 
 

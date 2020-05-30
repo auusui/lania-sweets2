@@ -63,7 +63,7 @@ class NavBar extends React.Component {
               <Menu.Item name='Make Your Own Order'
                          active={activeItem === 'make your own order'}
                          onClick={this.handleItemClick}
-                         as={NavLink} activeClassName="active" exact to="/myo" key='myo'/>
+                         as={NavLink} activeClassName="active" exact to="/myo" key='myo'/>,
               <Menu.Item name='Promotions'
                          active={activeItem === 'promotions'}
                          onClick={this.handleItemClick}
